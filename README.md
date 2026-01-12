@@ -24,8 +24,8 @@
 
 ```bash
 # клонируем
-git clone https://github.com/твой-username/backend.git
-cd backend
+git clone https://github.com/lshishkin/nest-real-world.git
+cd nest-real-world
 
 # зависимости
 npm install
