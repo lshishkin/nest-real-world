@@ -30,6 +30,9 @@ cd nest-real-world
 # зависимости
 npm install
 
+# настройка .env
+Создайте файл .env и заполните данными из файла .env.example
+
 # миграции
 npm run migration:generate
 npm run migration:run
