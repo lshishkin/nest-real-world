@@ -20,7 +20,7 @@ import { ArticlesResponseInterface } from './types/articlesResponse.interface';
 import type { ArticlesQueryInterface } from './types/articlesQuery.interface';
 import { BackendValidationPipe } from '@app/shared/pipes/backendValidation.pipe';
 
-@Controller('article')
+@Controller('articles')
 export class ArticleController {
   constructor(private readonly articleService: ArticleService) {}
 
