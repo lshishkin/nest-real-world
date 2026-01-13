@@ -7,6 +7,7 @@ import {
   Req,
   UseGuards,
   UsePipes,
+  ValidationPipe,
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { CreateUserDto } from './dto/createUser.dto';
@@ -46,7 +47,7 @@ export class UserController {
     return this.userService.buildUserResponse(request.user as UserType);
   }
   @Put('user')
-  @UsePipes(new BackendValidationPipe())
+  @UsePipes(new ValidationPipe())
   @UseGuards(AuthGuard)
   async updateUser(
     @User('id') currentUserId: number,

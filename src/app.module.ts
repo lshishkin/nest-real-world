@@ -8,12 +8,14 @@ import { UserModule } from './user/user.module';
 import { AuthMiddleware } from './user/middlewares/auth.middleware';
 import { ArticleModule } from './article/article.module';
 import { ProfileModule } from './profile/profile.module';
+import { CommentModule } from './comment/comment.module';
 
 @Module({
   imports: [
     TypeOrmModule.forRoot(dataSourceOptions),
     TagModule,
     UserModule,
+    CommentModule,
     ArticleModule,
     ProfileModule,
   ],

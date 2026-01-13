@@ -1,3 +1,4 @@
+import { CommentEntity } from '../comment/comment.entity';
 import { ArticleEntity } from '../article/article.entity';
 import { hash } from 'bcrypt';
 import {
@@ -36,6 +37,9 @@ export class UserEntity {
   }
   @OneToMany(() => ArticleEntity, (article) => article.author)
   articles: ArticleEntity[];
+
+  @OneToMany(() => CommentEntity, (comment) => comment.author)
+  comments: CommentEntity[];
 
   @ManyToMany(() => ArticleEntity)
   @JoinTable()

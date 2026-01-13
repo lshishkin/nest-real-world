@@ -1,27 +1,17 @@
+import { ArticleEntity } from '../article/article.entity';
 import { UserEntity } from '../user/user.entity';
-import { CommentEntity } from '../comment/comment.entity';
 import {
   Entity,
   PrimaryGeneratedColumn,
   Column,
   BeforeUpdate,
   ManyToOne,
-  OneToMany,
 } from 'typeorm';
 
-@Entity({ name: 'articles' })
-export class ArticleEntity {
+@Entity({ name: 'comments' })
+export class CommentEntity {
   @PrimaryGeneratedColumn()
   id: number;
-
-  @Column()
-  slug: string;
-
-  @Column()
-  title: string;
-
-  @Column({ default: '' })
-  description: string;
 
   @Column({ default: '' })
   body: string;
@@ -32,19 +22,14 @@ export class ArticleEntity {
   @Column({ type: 'timestamp', default: () => 'CURRENT_TIMESTAMP' })
   updatedAt: Date;
 
-  @Column('simple-array')
-  tagList: string[];
-
-  @Column({ default: 0 })
-  favoritesCount: number;
-
   @BeforeUpdate()
   setUpdatedAt() {
     this.updatedAt = new Date();
   }
-  @ManyToOne(() => UserEntity, (user) => user.articles, { eager: true })
+
+  @ManyToOne(() => UserEntity, (user) => user.comments, { eager: true })
   author: UserEntity;
 
-  @OneToMany(() => CommentEntity, (comment) => comment.article)
-  comments: CommentEntity[];
+  @ManyToOne(() => ArticleEntity, (article) => article.comments)
+  article: ArticleEntity;
 }
