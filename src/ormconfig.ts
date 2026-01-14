@@ -10,7 +10,7 @@ export const dataSourceOptions: DataSourceOptions = {
   port: process.env.DB_PORT as unknown as number || 5432,
   username: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,
-  database: "mediumclone",
+  database: process.env.DB_NAME,
   entities: [__dirname + '/**/*.entity{.ts,.js}'],
   synchronize: false,
   migrations: [__dirname + '/migrations/**/*{.ts,.js}'],
