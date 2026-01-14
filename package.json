@@ -21,6 +21,7 @@
     "db:create": "npm run typeorm -- migration:create ./src/migrations/Create",
     "db:generate": "npm run typeorm -- -d src/ormconfig.ts migration:generate ./src/migrations/Generate",
     "migration:run": "npm run typeorm -- -d src/ormconfig.ts migration:run",
+    "migration:run:prod": "typeorm migration:run -d src/ormconfig.ts",
     "migration:revert": "npm run typeorm -- -d src/ormconfig.ts migration:revert",
     "db:drop": "npm run typeorm -- -d src/ormconfig.ts schema:drop"
   },
