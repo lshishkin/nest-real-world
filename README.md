@@ -1,5 +1,6 @@
 # backend — NestJS RealWorld API
 Задиплоино по адресу https://nest-real-world.onrender.com/
+Посмотреть как работает вместе с фронтом https://h56g43-5000.csb.app/
 
 Реализация бэкенда для **Medium.com**-клона по спецификации [RealWorld API](https://github.com/gothinkster/realworld)  
 на **NestJS 11** + **TypeORM** + PostgreSQL.
